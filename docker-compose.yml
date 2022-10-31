@@ -1,0 +1,18 @@
+version: "3.8"
+
+
+services:
+  oraclexe:
+    build: .
+    container_name: oracle
+    restart: always
+    ports:
+      - 1521:1521
+    volumes:
+      - oracle_data:/opt/oracle/oradata
+    env_file:
+      - ./.env
+
+
+volumes:
+  oracle_data:
